@@ -1,0 +1,25 @@
+name: "Daily schedule"
+
+on:
+  schedule:
+  - cron: "0 */1 * * *"
+
+
+jobs:
+  hourly_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code into workspace directory
+        uses: actions/checkout@v2
+      - name: Install project dependencies
+        uses: docker://dataformco/dataform:1.17.2
+        with:
+          args: install
+      - name: Decrypt Dataform credentials
+        run: ./decrypt_credentials.sh
+        env:
+          DATAFORM_CREDS_GPG_PASSPHRASE: ${{ secrets.DATAFORM_CREDS_GPG_PASSPHRASE }}
+      - name: Create a run with all actions
+        uses: docker://dataformco/dataform:1.17.2
+        with:
+          args: run
