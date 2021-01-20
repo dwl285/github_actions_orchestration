@@ -1,6 +1,6 @@
 {
     "warehouse": "bigquery",
-    "defaultSchema": "dataform",
-    "assertionSchema": "dataform_assertions",
+    "defaultSchema": "github_actions_orchestration",
+    "assertionSchema": "github_actions_orchestration",
     "defaultDatabase": "dan-playground-285"
 }
