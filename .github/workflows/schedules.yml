@@ -1,4 +1,4 @@
-name: "Daily schedule"
+name: "Hourly schedule"
 
 on:
   schedule:
