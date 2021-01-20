@@ -1,0 +1,7 @@
+config {
+  type: "view"
+}
+
+select
+  "foo" as a,
+  1 as b
