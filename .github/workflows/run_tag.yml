@@ -31,4 +31,4 @@ jobs:
       - name: Create a run with all actions
         uses: docker://dataformco/dataform:1.17.2
         with:
-          args: run ${{ github.event.inputs.name }}
+          args: run --tags ${{ github.event.inputs.name }}
